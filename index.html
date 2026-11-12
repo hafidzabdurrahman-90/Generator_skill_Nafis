@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title> Generator Skill </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="kotak-mesin">
+            <h1> Generator Skill Unik</h1>
+
+            <p> 
+                Masukkan nama untuk 
+                melihat skill tersembunyimu
+            </p>
+            
+            <input
+            type="text"
+            id="namaInput"
+            placeholder="Ketik namamu..."
+            >
+            <button onclick="cekSkill()">
+                Cek Sekarang!
+            </button>
+
+            <h2 id="hasilSkill">
+                Skill belum terdeteksi...
+            </h2>
+            <img
+            id="fotoskill"
+            src="https://placehold.co/200x200?text=?"
+            width="400">
+        </div>
+        <script>
+            function cekSkill () {
+                let nama = document.getElementById("namaInput").value;
+                let daftarSkill = [ 
+                    "Makan Mie ayam sambil minum lewat hidung",
+                    "makan ayam geprek cabe 12",
+                    "kebal ditabrak motor",
+                ];
+                let daftarGambar=[
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEFlCNaAh6ZmFAXQ6HOCI51adudmsc4iRnXDz0Ub_crQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTG5foyvQJczHP_RQNbUDSN-f-YEgG4_CFoM1yfBUByw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFs8V8lw_K5FwGWWv1hUKvtL73BpnvCHptNchJhhmb_w&s=10"
+                ]
+                let acak = Math.floor(Math.random() * daftarSkill.length);
+                let skillPilihan = daftarSkill[acak];
+                let gambarpilihan = daftarGambar[acak];
+                document.getElementById("hasilSkill").innerText = nama + ", skill unikmu adalah: " + skillPilihan;
+               document.getElementById("fotoskill").src = gambarpilihan;
+            }
+        </script>
+    </body>
+</html>
